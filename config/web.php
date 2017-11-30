@@ -1,5 +1,6 @@
 <?php
 
+$scm_config = require __DIR__ . '/scm_config.php';
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
@@ -10,6 +11,9 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+    ],
+    'modules' => [
+      'admin' => 'app\modules\admin\AdminModule',//系统权限相关模块
     ],
     'components' => [
         'request' => [
@@ -42,7 +46,6 @@ $config = [
                 ],
             ],
         ],
-        'db' => $db,
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -51,7 +54,7 @@ $config = [
             ],
         ],
         */
-    ],
+    ] + $db,
     'params' => $params,
 ];
 
