@@ -1,11 +1,16 @@
 <?php
-
+$Mysql_Command = 'app\components\system\DbCommand';
 return [
-    'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
-    'username' => 'root',
-    'password' => '',
-    'charset' => 'utf8',
+
+    'db' => [
+        'class'       => 'yii\db\Connection',
+        'dsn'         => $scm_config['triangel.db.dsn'],
+        'username'    => $scm_config['triangel.db.username'],
+        'password'    => $scm_config['triangel.db.password'],
+        'charset'     => 'utf8',
+        'commandClass' => $Mysql_Command
+    ]
+
 
     // Schema cache options (for production environment)
     //'enableSchemaCache' => true,
