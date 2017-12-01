@@ -9,8 +9,8 @@
 namespace app\components\system;
 
 
-use Exception;
 use yii\db\Command;
+use yii\db\Exception;
 
 /**
  * Class Command
