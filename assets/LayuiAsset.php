@@ -21,5 +21,6 @@ class LayuiAsset extends AssetBundle
     ];
     public $js = [
         'layui/layui.all.js',
+        'layui/js/jquery.js',
     ];
 }
