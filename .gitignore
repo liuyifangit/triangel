@@ -30,7 +30,7 @@ tests/_output/*
 tests/_support/_generated
 
 # scm_config
-#/config/scm_config.php
+config/scm_config.php
 
 # yii runtime file
 /runtime
