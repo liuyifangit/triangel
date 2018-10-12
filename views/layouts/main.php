@@ -47,7 +47,7 @@ LayuiAsset::register($this);
             <li class="layui-nav-item">
                 <a href="javascript:;">
                     <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    刘伊凡
+                    小可爱
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="">基本资料</a></dd>
@@ -58,7 +58,13 @@ LayuiAsset::register($this);
         </ul>
     </div>
 
-
+    <div class="layui-layer layui-layer-page layui-layer-dir" id="layui-layer1" type="page" times="1" showtime="0" contype="object" style="z-index: 19891015; top: 350.5px; left: 1686px; margin-left: -15px;">
+        <div class="layui-layer-title" style="cursor: move;">公众号</div>
+        <div  id="" class="layui-layer-content"><img class="site-dir layui-layer-wrap" style="display: block;">
+                <img src="/image/triangel_wx.jpg"/>
+        </div>
+        <span class="layui-layer-setwin"><a class="layui-layer-ico layui-layer-close layui-layer-close1" href="javascript:;"></a></span><span class="layui-layer-resize"></span>
+    </div>
 
     <div class="layui-body">
         <!-- 内容主体区域 -->

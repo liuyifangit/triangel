@@ -1,4 +1,5 @@
 <?php
+
 $Mysql_Command = 'app\components\system\DbCommand';
 return [
 

@@ -1,6 +1,6 @@
 <?php
 
-$scm_config = require __DIR__ . '/scm_config.php';
+require(__DIR__ . '/scm_config.php');
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
@@ -14,6 +14,7 @@ $config = [
     ],
     'modules' => [
       'admin' => 'app\modules\admin\AdminModule',//系统权限相关模块
+      'mihuwai' => 'app\modules\mihuwai\MihuwaiModule',//米户外
     ],
     'components' => [
         'request' => [
