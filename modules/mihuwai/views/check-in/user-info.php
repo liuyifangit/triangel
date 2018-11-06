@@ -3,7 +3,7 @@
         <div class="layui-inline">
             <label class="layui-form-label">验证手机</label>
             <div class="layui-input-inline">
-                <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input" value="<?=$userInfo['phone_num']?>" disabled="disabled"/>
+                <input type="text" name="phone" autocomplete="off" class="layui-input" value="<?=$userInfo['phone_num']?>" disabled="disabled"/>
             </div>
         </div>
         <div class="layui-inline">
@@ -19,7 +19,7 @@
             <label class="layui-form-label">参加人数</label>
             <div class="layui-input-inline">
 
-                <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input" value="<?=$userInfo['join_num']?>" disabled="disabled"/>
+                <input type="text" name="phone"  autocomplete="off" class="layui-input" value="<?=$userInfo['join_num']?>" disabled="disabled"/>
             </div>
         </div>
         <div class="layui-inline">

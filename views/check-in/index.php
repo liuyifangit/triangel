@@ -4,7 +4,7 @@
         <div class="layui-inline">
             <label class="layui-form-label">验证手机</label>
             <div class="layui-input-inline">
-                <input type="tel" name="phone_num" lay-verify="required|phone" autocomplete="off" class="layui-input">
+                <input type="tel" name="phone_num" autocomplete="off" class="layui-input">
             </div>
         </div>
     </div>
@@ -31,7 +31,7 @@
                     if(json.code == 1) {
                         alert(json.msg);
                     }else {
-                        alert(json.msg);
+                       // alert(json.msg);
                         location.replace('get-user-info?phone_num=' + phone_num);
 
                     }

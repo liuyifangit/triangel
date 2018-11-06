@@ -39,7 +39,7 @@ class CheckInController extends AbstractWebController
         $checkInModel = CheckInModel::getInstance();
 
         if(!$checkInModel->existPhoneNum($phone_num)) {
-            JsonMsg::Fail('手机号存在,请联系领队');
+            JsonMsg::Fail('手机号不存在,请联系领队');
         }
 
         if($checkInModel->updateCheck($phone_num)) {
