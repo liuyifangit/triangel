@@ -27,6 +27,11 @@ class CheckInController extends AbstractWebController
 
     public function actionCheck() {
         $phone_num = Input::getInt('phone_num');
+        $user_name = Input::getString('user_name');
+
+        if(empty($user_name)){
+            JsonMsg::Fail('姓名不能为空');
+        }
 
         if(empty($phone_num)){
             JsonMsg::Fail('手机号不能为空');
@@ -42,11 +47,15 @@ class CheckInController extends AbstractWebController
             JsonMsg::Fail('手机号不存在,请联系领队');
         }
 
+        if(!$checkInModel->bothUserNameAndPhoneNumRight($phone_num, $user_name)) {
+            JsonMsg::Fail('姓名和手机号与报名信息不一致,请检查姓名的正确性');
+        }
+
         if($checkInModel->updateCheck($phone_num)) {
 
             $userInfo = $checkInModel->getUserInfo($phone_num);
 
-            JsonMsg::Success("当前签到次数为{$userInfo['check_times']}");
+            JsonMsg::Success("当前签到次数为{$userInfo['check_times']}", $userInfo);
         }
 
     }
@@ -57,7 +66,6 @@ class CheckInController extends AbstractWebController
         $phone_num = Input::getInt('phone_num');
 
         $userInfo = $checkInModel->getUserInfo($phone_num);
-
         return $this->render('user-info', [
             'userInfo' => $userInfo
         ]);

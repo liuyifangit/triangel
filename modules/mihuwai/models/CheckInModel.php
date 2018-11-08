@@ -28,6 +28,14 @@ class CheckInModel
 
     }
 
+    public function bothUserNameAndPhoneNumRight($phoneNum, $userName) {
+        $sql = "SELECT COUNT(*) FROM user WHERE phone_num = {$phoneNum} AND user_name = '{$userName}'";
+
+        $count = Yii::$app->db->createCommand($sql)->queryScalar();
+
+        return $count > 0 ? true : false;
+    }
+
     public function updateCheck($phoneNum) {
         $sql = "SELECT check_times FROM user WHERE phone_num = {$phoneNum}";
 
