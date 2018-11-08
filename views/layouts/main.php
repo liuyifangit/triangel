@@ -27,45 +27,6 @@ LayuiAsset::register($this);
 <body class="layui-layout-body">
 <?php $this->beginBody() ?>
 <div class="layui-layout layui-layout-admin">
-    <div class="layui-header">
-        <div class="layui-logo">缘分天使(Triangel)</div>
-        <!-- 头部区域（可配合layui已有的水平导航） -->
-        <ul class="layui-nav layui-layout-left">
-            <li class="layui-nav-item"><a href="">首页</a></li>
-            <li class="layui-nav-item"><a href="">碰碰</a></li>
-            <li class="layui-nav-item"><a href="">爱情圈</a></li>
-            <li class="layui-nav-item">
-                <a href="javascript:;">其它</a>
-                <dl class="layui-nav-child">
-                    <dd><a href="">邮件管理</a></dd>
-                    <dd><a href="">消息管理</a></dd>
-                    <dd><a href="">授权管理</a></dd>
-                </dl>
-            </li>
-        </ul>
-        <ul class="layui-nav layui-layout-right">
-            <li class="layui-nav-item">
-                <a href="javascript:;">
-                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    小可爱
-                </a>
-                <dl class="layui-nav-child">
-                    <dd><a href="">基本资料</a></dd>
-                    <dd><a href="">安全设置</a></dd>
-                </dl>
-            </li>
-            <li class="layui-nav-item"><a href="">退出</a></li>
-        </ul>
-    </div>
-
-    <div class="layui-layer layui-layer-page layui-layer-dir" id="layui-layer1" type="page" times="1" showtime="0" contype="object" style="z-index: 19891015; top: 350.5px; left: 1686px; margin-left: -15px;">
-        <div class="layui-layer-title" style="cursor: move;">公众号</div>
-        <div  id="" class="layui-layer-content"><img class="site-dir layui-layer-wrap" style="display: block;">
-                <img src="/image/triangel_wx.jpg"/>
-        </div>
-        <span class="layui-layer-setwin"><a class="layui-layer-ico layui-layer-close layui-layer-close1" href="javascript:;"></a></span><span class="layui-layer-resize"></span>
-    </div>
-
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
@@ -73,10 +34,6 @@ LayuiAsset::register($this);
         </div>
     </div>
 
-    <div class="layui-footer">
-        <!-- 底部固定区域 -->
-        © <?=date('Y') ?> Power by 刘伊凡
-    </div>
 </div>
 <script>
     /*//JavaScript代码区域
