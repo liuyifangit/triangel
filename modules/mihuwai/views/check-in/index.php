@@ -7,6 +7,13 @@
 
 </style>
 
+<head>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+</head>
+
+
 <form class="layui-form" action="check">
 
     <h3>米户外签到页面</h3>
@@ -80,7 +87,7 @@
 </div>
 
 
-<script  src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<!--<script  src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>-->
 
 <script>
     $('form').submit(function () {
