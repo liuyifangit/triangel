@@ -9,7 +9,7 @@
 
 <form class="layui-form" action="check">
 
-    <h3>米户外签单页面</h3>
+    <h3>米户外签到页面</h3>
 
     <div class="layui-form-item">
         <div class="layui-inline">
@@ -22,7 +22,7 @@
 
     <div class="layui-form-item">
         <div class="layui-inline">
-            <label class="layui-form-label">验证手机</label>
+            <label class="layui-form-label">报名手机</label>
             <div class="layui-input-inline">
                 <input type="tel" name="phone_num" lay-verify="required|phone" autocomplete="off" class="layui-input">
             </div>
@@ -47,7 +47,7 @@
 
     <div class="layui-form-item">
         <div class="layui-inline">
-            <label class="layui-form-label">验证手机</label>
+            <label class="layui-form-label">报名手机</label>
             <div class="layui-input-inline">
                 <input type="text" name="phone_num" autocomplete="off" class="layui-input" value="" disabled="disabled"/>
             </div>
