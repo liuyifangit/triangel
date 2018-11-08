@@ -99,7 +99,7 @@
                     var json = $.parseJSON(datas);
 
                     if(json.code == 1) {
-                        alert(json.msg);
+                        layer.msg(json.msg);
                     }else {
                         $("input[name='phone_num']").val(json.data.phone_num);
                         $("input[name='user_name']").val(json.data.user_name);
