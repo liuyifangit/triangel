@@ -51,8 +51,8 @@ class CheckInModel
     }
 
 
-    public function getUserInfo($phoneNum) {
-        $sql = "SELECT * FROM user WHERE phone_num = {$phoneNum}";
+    public function getUserInfo($phoneNum, $userName) {
+        $sql = "SELECT * FROM user WHERE phone_num = {$phoneNum} AND user_name = '{$userName}'";
 
         return Yii::$app->db->createCommand($sql)->queryOne();
     }

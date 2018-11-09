@@ -53,24 +53,13 @@ class CheckInController extends AbstractWebController
 
         if($checkInModel->updateCheck($phone_num, $user_name)) {
 
-            $userInfo = $checkInModel->getUserInfo($phone_num);
+            $userInfo = $checkInModel->getUserInfo($phone_num, $user_name);
 
             JsonMsg::Success("当前签到次数为{$userInfo['check_times']}", $userInfo);
         }
 
     }
 
-    public function actionGetUserInfo() {
-        $checkInModel = CheckInModel::getInstance();
-
-        $phone_num = Input::getInt('phone_num');
-
-        $userInfo = $checkInModel->getUserInfo($phone_num);
-        return $this->render('user-info', [
-            'userInfo' => $userInfo
-        ]);
-
-    }
 
     public function actionGetUsers() {
         $pwd = Input::getString('pwd');
