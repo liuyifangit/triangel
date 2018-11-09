@@ -14,7 +14,7 @@
 </head>
 
 
-<form class="layui-form" action="check">
+<form class="layui-form check-in-form" action="">
 
     <h3>米户外签到页面</h3>
 
@@ -36,12 +36,8 @@
         </div>
     </div>
 
-    <div class="layui-form-item">
-        <div class="layui-inline">
-            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即签到</button>
-            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-        </div>
-    </div>
+            <button type="button" onclick="checkIn()">立即签到</button>
+            <button type="reset">重置</button>
 
 
 
@@ -83,17 +79,16 @@
         </div>
     </div>
 
-    <h3 style="color: red" hidden="hidden" id="repetition-h">已重复签到</h3>
+    <h3 style="color: red" id="repetition-h"></h3>
 </div>
 
 
 <!--<script  src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>-->
 
 <script>
-    $('form').submit(function () {
-
+    function checkIn() {
         $.ajax({
-            url:"check?" + $('form').serialize(),
+            url:"check?" + $('form.check-in-form').serialize(),
             success:function (datas) {
                 if (datas != undefined || datas != "") {
                     var json = $.parseJSON(datas);
@@ -108,18 +103,17 @@
                         $(".verify-div").show();
 
                         if(json.data.check_times > 1) {
-                            $("#repetition-h").show();
+                            $("#repetition-h").html("已重复签到");
+
                         }else {
-                            $("#repetition-h").hide();
+                            $("#repetition-h").html("验证成功");
                         }
                     }
 
 
                 }
             }
-        });
-
-        return false;
-    });
+        })
+    }
 
 </script>

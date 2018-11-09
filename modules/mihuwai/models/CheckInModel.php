@@ -36,14 +36,14 @@ class CheckInModel
         return $count > 0 ? true : false;
     }
 
-    public function updateCheck($phoneNum) {
+    public function updateCheck($phoneNum, $userName) {
         $sql = "SELECT check_times FROM user WHERE phone_num = {$phoneNum}";
 
         $check_times = Yii::$app->db->createCommand($sql)->queryScalar();
 
         $check_times++;
 
-        $sql = "UPDATE user SET check_times = {$check_times} WHERE phone_num = {$phoneNum}";
+        $sql = "UPDATE user SET check_times = {$check_times} WHERE phone_num = {$phoneNum} AND user_name = '{$userName}'";
 
         $ret = Yii::$app->db->createCommand($sql)->execute();
 

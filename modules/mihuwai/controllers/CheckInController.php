@@ -34,7 +34,7 @@ class CheckInController extends AbstractWebController
         }
 
         if(empty($phone_num)){
-            JsonMsg::Fail('手机号不能为空');
+            JsonMsg::Fail('手机号为11位数字且手机号不能为空');
         }
 
         if(strlen($phone_num) != 11) {
@@ -51,7 +51,7 @@ class CheckInController extends AbstractWebController
             JsonMsg::Fail('姓名和手机号与报名信息不一致,请检查姓名的正确性');
         }
 
-        if($checkInModel->updateCheck($phone_num)) {
+        if($checkInModel->updateCheck($phone_num, $user_name)) {
 
             $userInfo = $checkInModel->getUserInfo($phone_num);
 
