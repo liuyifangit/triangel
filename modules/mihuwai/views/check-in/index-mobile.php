@@ -42,10 +42,10 @@
         <div class="verify-div">
             <h3 style="color: red">验证结果</h3>
             <ul data-role="listview" data-theme="e">
-                <li id="ul-li-user_name">姓名：刘伊凡</li>
-                <li id="ul-li-phone_num">报名电话：17610597130</li>
-                <li id="ul-li-join_num">参加人数：1</li>
-                <li id="ul-li-check_times">签到次数：2</li>
+                <li id="ul-li-user_name">姓名：</li>
+                <li id="ul-li-phone_num">报名电话：</li>
+                <li id="ul-li-join_num">参加人数：</li>
+                <li id="ul-li-check_times">签到次数：</li>
             </ul>
             <h3 style="color: red" id="repetition-h"></h3>
         </div>
@@ -105,10 +105,10 @@
                     if(json.code == 1) {
                         layer.msg(json.msg);
                     }else {
-                        $("#ul-li-phone_num").val(json.data.phone_num);
-                        $("#ul-li-user_name").val(json.data.user_name);
-                        $("#ul-li-join_num").val(json.data.join_num);
-                        $("#ul-li-check_times").val(json.data.check_times);
+                        $("#ul-li-phone_num").html('报名电话：' + json.data.phone_num);
+                        $("#ul-li-user_name").html('姓名：' + json.data.user_name);
+                        $("#ul-li-join_num").html('参加人数：' + json.data.join_num);
+                        $("#ul-li-check_times").html('签到次数：' + json.data.check_times);
                         $(".verify-div").show();
 
                         if(json.data.check_times > 1) {
