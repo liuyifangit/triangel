@@ -64,13 +64,13 @@
     </div>
 
     <div class="layui-form-item">
-        <div class="layui-inline">
+        <!--<div class="layui-inline">
             <label class="layui-form-label">参加人数</label>
             <div class="layui-input-inline">
 
                 <input type="text" name="join_num"  autocomplete="off" class="layui-input" value="" disabled="disabled"/>
             </div>
-        </div>
+        </div-->>
         <div class="layui-inline">
             <label class="layui-form-label">签到次数</label>
             <div class="layui-input-inline">
@@ -98,7 +98,7 @@
                     }else {
                         $("input[name='phone_num']").val(json.data.phone_num);
                         $("input[name='user_name']").val(json.data.user_name);
-                        $("input[name='join_num']").val(json.data.join_num);
+//                        $("input[name='join_num']").val(json.data.join_num);
                         $("input[name='check_times']").val(json.data.check_times);
                         $(".verify-div").show();
 
