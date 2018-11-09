@@ -25,6 +25,10 @@ class CheckInController extends AbstractWebController
         return $this->render('index');
     }
 
+    public function actionIndexMobile() {
+        return $this->render('index-mobile');
+    }
+
     public function actionCheck() {
         $phone_num = Input::getInt('phone_num');
         $user_name = Input::getString('user_name');
