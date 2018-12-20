@@ -32,9 +32,8 @@
             </div>
 
             <div data-role="controlgroup" data-type="horizontal">
-
-                <a href="#" data-role="button" onclick="checkIn()">立即签到</a>
-                <a href="#" data-role="button" onclick="resetInput()">重置</a>
+                <a id = "check-in-bnt" href="#" data-role="button" onclick="checkIn()">立即签到</a>
+                <a id = "reset-bnt" href="#" data-role="button" onclick="resetInput()">重置</a>
             </div><br>
         </form>
 
@@ -60,6 +59,7 @@
 <!--<script  src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>-->
 
 <script>
+
     function haveFun() {
 
         var msg_arr = ['撩我就带走我',
@@ -110,11 +110,14 @@
 //                        $("#ul-li-join_num").html('参加人数：' + json.data.join_num);
                         $("#ul-li-check_times").html('签到次数：' + json.data.check_times);
                         $(".verify-div").show();
-
+                        $(".check-in-form").hide();
                         if(json.data.check_times > 1) {
                             $("#repetition-h").html("已重复签到");
-
                         }else {
+                            layer.msg('请把签到完成给工作人员查看<br>请不要退出，否则无法再次签到', {
+                                time: 20000, //20s后自动关闭
+                                btn: ['明白了', '知道了', '哦']
+                            });
                             $("#repetition-h").html("验证成功");
                         }
                     }
@@ -124,5 +127,4 @@
             }
         })
     }
-
 </script>
