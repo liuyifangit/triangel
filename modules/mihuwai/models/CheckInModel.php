@@ -57,9 +57,23 @@ class CheckInModel
         return Yii::$app->db->createCommand($sql)->queryOne();
     }
 
-    public function getUsers() {
-        $sql = "SELECT * FROM user";
+    public function getUnCheckInUsers() {
+        $sql = "SELECT * FROM user WHERE check_times = 0";
 
         return Yii::$app->db->createCommand($sql)->queryAll();
+    }
+
+    public function getCheckInUsers() {
+        $sql = "SELECT * FROM user WHERE check_times <> 0 ORDER BY check_times DESC";
+
+        return Yii::$app->db->createCommand($sql)->queryAll();
+    }
+
+    public function getUserCount($flag = '') {
+        $sql = "SELECT COUNT(*) FROM user WHERE 1=1 ";
+        if(!empty($flag)) {
+            $sql .= $flag == 'checkIn' ? " AND check_times <> 0" : " AND check_times = 0";
+        }
+        return Yii::$app->db->createCommand($sql)->queryScalar();
     }
 }

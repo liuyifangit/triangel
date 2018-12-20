@@ -67,18 +67,27 @@ class CheckInController extends AbstractWebController
 
     public function actionGetUsers() {
         $pwd = Input::getString('pwd');
+        $flag = Input::getString('flag');
 
         if($pwd != 'linruisen') {
             die('illegal operation');
         }
         $checkInModel = CheckInModel::getInstance();
 
-        $users = $checkInModel->getUsers();
+        if(!in_array($flag, ['checkIn', 'unCheckIn', ''])) {
+            die('illegal operation');
+        }
+
+        $users = $flag == 'checkIn' ? $checkInModel->getCheckInUsers() : $checkInModel->getUnCheckInUsers();
+        $count = $checkInModel->getUserCount();
+        $check_in = $checkInModel->getUserCount('checkIn');
+        $un_check_in = $checkInModel->getUserCount('unCheckIn');
+        $check_rate = round($check_in/$count, 4) * 100 . '%';
 
         return $this->render('users', [
-            'pwd' => $pwd,
-            'user' => $this->buidLayUitables($users)
-
+            'users' => $users,
+            'flag' => $flag,
+            'content' => "本次参加人数: {$count}, 已签到: {$check_in}, 未签到: {$un_check_in}, 签到率: {$check_rate}",
         ]);
     }
 
