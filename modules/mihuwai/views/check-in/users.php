@@ -24,13 +24,21 @@
 
     <div data-role="main" class="ui-content">
         <fieldset data-role="fieldcontain">
-            <label for="day">签到筛选</label>
             <select name="day" id="check-select" onclick="checkSelectChange()">
                 <option value="" <?php if($flag == '') echo 'selected="selected"' ?>>全部人员</option>
                 <option value="checkIn" <?php if($flag == 'checkIn') echo 'selected="selected"' ?>>已签到</option>
                 <option value="unCheckIn" <?php if($flag == 'unCheckIn') echo 'selected="selected"' ?>>未签到</option>
             </select>
         </fieldset>
+
+        <form method="post" action="demoform.html">
+            <label for="fname" class="ui-hidden-accessible">姓名:</label>
+            <input type="text" name="fname" id="fname" placeholder="姓名..." value="<?=$fname?>" data-clear-btn="true">
+
+            <div data-role="controlgroup" data-type="horizontal">
+                <a id = "check-in-bnt" href="#" data-role="button" onclick="findUser()">查找</a>
+            </div><br>
+        </form>
 
         <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable">
             <thead>
@@ -67,5 +75,13 @@
         window.location.replace("/mihuwai/check-in/get-users?pwd=linruisen&flag=" + flag);
     }
 
+    function findUser() {
+        var fname = $("#fname").val();
+        if(fname == '') {
+            layer.msg("请输入姓名");
+            return;
+        }
+        window.location.replace("/mihuwai/check-in/get-users?pwd=linruisen&fname=" + fname);
+    }
 
 </script>

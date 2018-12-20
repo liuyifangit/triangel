@@ -57,6 +57,12 @@ class CheckInModel
         return Yii::$app->db->createCommand($sql)->queryOne();
     }
 
+    public function getUserInfoByName($userName) {
+        $sql = "SELECT * FROM user WHERE user_name = '{$userName}'";
+
+        return Yii::$app->db->createCommand($sql)->queryAll();
+    }
+
     public function getUnCheckInUsers() {
         $sql = "SELECT * FROM user WHERE check_times = 0";
 
