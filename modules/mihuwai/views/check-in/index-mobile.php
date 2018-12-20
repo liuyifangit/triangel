@@ -114,8 +114,8 @@
                         if(json.data.check_times > 1) {
                             $("#repetition-h").html("已重复签到");
                         }else {
-                            layer.msg('请把签到完成给工作人员查看<br>请不要退出，否则无法再次签到', {
-                                time: 20000, //20s后自动关闭
+                            layer.msg('请把签到结果给工作人员查看<br>请不要退出，否则无法再次签到', {
+                                time: 30000, //30s后自动关闭
                                 btn: ['明白了', '知道了', '哦']
                             });
                             $("#repetition-h").html("验证成功");
