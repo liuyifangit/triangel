@@ -23,6 +23,7 @@
     </div>
 
     <div data-role="main" class="ui-content">
+        <h3><?=$content?></h3>
         <fieldset data-role="fieldcontain">
             <select name="day" id="check-select" onchange="checkSelectChange()">
                 <option value="" <?php if($flag == '') echo 'selected="selected"' ?>>全部人员</option>
