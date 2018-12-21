@@ -19,11 +19,10 @@
 
 <div data-role="page" id="pageone">
     <div data-role="header">
-        <h1><?=$content?></h1>
+        <h1>签到统计页</h1>
     </div>
 
     <div data-role="main" class="ui-content">
-        <h3><?=$content?></h3>
         <fieldset data-role="fieldcontain">
             <select name="day" id="check-select" onchange="checkSelectChange()">
                 <option value="" <?php if($flag == '') echo 'selected="selected"' ?>>全部人员</option>
@@ -41,6 +40,8 @@
             </div><br>
         </form>
 
+
+        <h3><?=$content?></h3>
         <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable">
             <thead>
             <tr>
