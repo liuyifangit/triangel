@@ -24,7 +24,7 @@
 
     <div data-role="main" class="ui-content">
         <fieldset data-role="fieldcontain">
-            <select name="day" id="check-select" onclick="checkSelectChange()">
+            <select name="day" id="check-select" onchange="checkSelectChange()">
                 <option value="" <?php if($flag == '') echo 'selected="selected"' ?>>全部人员</option>
                 <option value="checkIn" <?php if($flag == 'checkIn') echo 'selected="selected"' ?>>已签到</option>
                 <option value="unCheckIn" <?php if($flag == 'unCheckIn') echo 'selected="selected"' ?>>未签到</option>
@@ -43,9 +43,9 @@
         <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable">
             <thead>
             <tr>
-                <th data-priority="6">姓名</th>
+                <th>姓名</th>
                 <th>手机号</th>
-                <th data-priority="1">签到次数</th>
+                <th>签到次数</th>
                 <th data-priority="2">签到时间</th>
             </tr>
             </thead>
@@ -55,7 +55,7 @@
                     <td><?=$user['user_name'] ?></td>
                     <td><?=$user['phone_num'] ?></td>
                     <td><?=$user['check_times'] ?></td>
-                    <td><?=$user['add_time'] ?></td>
+                    <td><?=$user['check_times'] != 0 ? $user['add_time'] : '0' ?></td>
                 </tr>
             <?php endforeach;?>
 
