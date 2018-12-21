@@ -82,7 +82,7 @@ class CheckInController extends AbstractWebController
         if(!empty($fname)) {
             $users = $checkInModel->getUserInfoByName($fname);
         }else{
-            $users = $flag == 'checkIn' ? $checkInModel->getCheckInUsers() : $checkInModel->getUnCheckInUsers();
+            $users = $checkInModel->getUsers($flag);
         }
         $count = $checkInModel->getUserCount();
         $check_in = $checkInModel->getUserCount('checkIn');
